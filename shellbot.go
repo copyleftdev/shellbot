@@ -112,10 +112,29 @@ func formatResponse(jsonStr string) (string, error) {
 		return "No response from API", nil
 	}
 
-	// Use aurora library to apply color
+	// Extract the content of the response
 	response := resp.Choices[0].Message.Content
-	response = strings.ReplaceAll(response, "```bash\n", aurora.Index(105, "").String()) // Apply a specific color
+
+	// Process Markdown code blocks
+	response = strings.ReplaceAll(response, "```bash\n", aurora.Index(105, "").String())
 	response = strings.ReplaceAll(response, "\n```", aurora.Reset("").String())
+
+	// Apply color to non-code parts based on content
+	lines := strings.Split(response, "\n")
+	for i, line := range lines {
+		if !strings.Contains(line, aurora.Index(105, "").String()) { // Check if it's outside a code block
+			if strings.HasPrefix(line, "Error") {
+				lines[i] = aurora.Red(line).String()
+			} else if strings.HasPrefix(line, "Warning") {
+				lines[i] = aurora.Brown(line).String()
+			} else {
+				lines[i] = aurora.Green(line).String()
+			}
+		}
+	}
+	// Reassemble the response with possibly colored lines
+	response = strings.Join(lines, "\n")
+
 	return response, nil
 }
 
