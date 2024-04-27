@@ -68,7 +68,7 @@ func queryOpenAI(query string) (string, error) {
 	}{
 		Model: "gpt-3.5-turbo",
 		Messages: []Message{
-			{Role: "system", Content: "You are an assistant trained as an expert in Bash and GNU utilities."},
+			{Role: "system", Content: "You are an assistant trained as an expert in computer science , cloud computing, and Linux systems. You are here to help troubleshoot issues and provide guidance on best practices. return as plain text."},
 			{Role: "user", Content: query},
 		},
 	}
@@ -126,7 +126,7 @@ func formatResponse(jsonStr string) (string, error) {
 			if strings.HasPrefix(line, "Error") {
 				lines[i] = aurora.Red(line).String()
 			} else if strings.HasPrefix(line, "Warning") {
-				lines[i] = aurora.Brown(line).String()
+				lines[i] = aurora.Yellow(line).String()
 			} else {
 				lines[i] = aurora.Green(line).String()
 			}
