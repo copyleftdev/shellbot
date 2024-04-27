@@ -76,7 +76,3 @@ ShellBot is all yours under the Apache License, Version 2.0. Peek at the `LICENS
 ## 📞 Holler at Us
 
 Run into a snag? Drop us a line on the GitHub issues page and we’ll get back to you faster than you can reboot!
-
----
-
-This version is lively and engaging, perfectly suited for a younger or more casual audience, and now correctly indicates the Apache License, Version 2.0 for ShellBot.
