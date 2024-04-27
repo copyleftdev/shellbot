@@ -66,7 +66,7 @@ func queryOpenAI(query string) (string, error) {
 		Model    string    `json:"model"`
 		Messages []Message `json:"messages"`
 	}{
-		Model: "gpt-3.5-turbo",
+		Model: "gpt-4",
 		Messages: []Message{
 			{Role: "system", Content: "You are an assistant trained as an expert in computer science , cloud computing, and Linux systems. You are here to help troubleshoot issues and provide guidance on best practices. return as plain text."},
 			{Role: "user", Content: query},
