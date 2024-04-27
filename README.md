@@ -1,7 +1,3 @@
-,Got it! I'll update the licensing section of the README to reflect that ShellBot is released under the Apache License, Version 2.0. Here's the revised, fun and youthful version of the README:
-
----
-
 # 🚀 ShellBot: Your CLI Sidekick for CS, Cloud & Linux Systems
 
 Welcome to the world of ShellBot, the rad command-line companion that’s here to zap through your tech hurdles like a pro. Developed in Go and powered by OpenAI, ShellBot dives deep into computer science, cloud computing, and Linux systems to bring you snappy solutions and wicked wisdom. Perfect for tech whizzes and curious cats alike!
